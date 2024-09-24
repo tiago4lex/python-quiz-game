@@ -1,0 +1,480 @@
+{
+    "fases": [
+        {
+            "fase": 1,
+            "perguntas": [
+                {
+                    "pergunta": "Qual é a função principal de um sistema oepracional?",
+                    "opcoes": ["Proteger o computador", "Gerenciar recursos de hardware", "Criar software", "Aumentar a velocidade da internet"],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que é hardware?",
+                    "opcoes": ["Conjunto de programas", "Equipamentos físicos do computador", "Linguagem de programação", "Rede de computadores"],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual desses é um exemplo de hardware?",
+                    "opcoes": ["Mouse", "Teclado", "Microsft Word", "Placa-mãe"],
+                    "correta": 3
+                },
+                {
+                    "pergunta": "O que é um driver de dispositivo?",
+                    "opcoes": ["Software que permite comunicação entre o SO e o hardware", "Um tipo de hardware", "Um programa de edição de vídeo", "Um sistema de segurança"],
+                    "correta": 0
+                },
+                {
+                    "pergunta": "Qual dos seguintes é um sistema operacional?",
+                    "opcoes": ["Adobe Photoshop", "Google Chrome", "Microsft Excel", "Windows"],
+                    "correta": 3
+                },
+                {
+                    "pergunta": "Qual é a principal função da memória RAM?",
+                    "opcoes": ["Armazenar dados permanentemente", "Conctar à internet", "Executar instruções de programas em uso", "Proteger o computador de vírus"],
+                    "correta": 2
+                },
+                {
+                    "pergunta":"O que é um arquivo executável?",
+                    "opcoes": ["Um docuemtno de texto", "Um arquivo que pode ser aberto e executado por um computador", "Um tipo de imagem", "Um arquivo de áudio"],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual é a finalidade de um antivírus?",
+                    "opcoes": ["Melhor qualidade de som", "Gerenciar arquivos", "Aumentar a velocidade do computador", "Proteger contra software malicioso"],
+                    "correta": 3
+                },
+                {
+                    "pergunta": "Qual componente é responsável pela saída de vídeo no computador?",
+                    "opcoes": ["Processador", "Placa-mãe", "Placa de vídeo", "Disco rígido"],
+                    "correta": 2
+                },
+                {
+                    "pergunta": "O que significa a sigla 'CPU'?",
+                    "opcoes": ["Central Processing Unit", "Central Processamento de Unidade", "Central Processamento de Unidade", "Central Processamento de Unidade"],
+                    "correta": 0
+                }
+            ]
+        },
+        {
+            "fase": 2,
+            "perguntas": [
+                {
+                    "pergunta": "Qual é a função do protocolo TCP/IP?",
+                    "opcoes": [
+                        "Gerenciar o armazenamento de dados",
+                        "Controlar o acesso ao hardware",
+                        "Facilitar a comunicação na internet",
+                        "Proteger contra vírus"
+                    ],
+                    "correta": 2
+                },
+                {
+                    "pergunta": "O que é um endereço IP?",
+                    "opcoes": [
+                        "Identificação de um dispositivo na rede",
+                        "Um tipo de software",
+                        "Um protocolo de segurança",
+                        "Um tipo de cabo de rede"
+                    ],
+                    "correta": 0
+                },
+                {
+                    "pergunta": "O que faz um roteador?",
+                    "opcoes": [
+                        "Armazena dados",
+                        "Conecta redes e encaminha pacotes de dados",
+                        "Aumenta a velocidade da internet",
+                        "Executa programas"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual destes é um protocolo de comunicação?",
+                    "opcoes": [
+                        "HTML",
+                        "FTP",
+                        "USB",
+                        "RAM"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que é DHCP?",
+                    "opcoes": [
+                        "Protocolo para transferência de arquivos",
+                        "Protocolo que atribui endereços IP automaticamente",
+                        "Tipo de firewall",
+                        "Ferramenta de edição de texto"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual é a função do DNS?",
+                    "opcoes": [
+                        "Aumentar a largura de banda",
+                        "Converter nomes de domínio em endereços IP",
+                        "Proteger a rede contra ataques",
+                        "Melhorar a velocidade do computador"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual é a diferença entre HTTP e HTTPS?",
+                    "opcoes": [
+                        "HTTP é mais rápido que HTTPS",
+                        "HTTPS é a versão segura do HTTP",
+                        "HTTP é usado apenas para e-mails",
+                        "HTTPS não suporta imagens"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que é uma VPN?",
+                    "opcoes": [
+                        "Rede privada virtual que aumenta a segurança da internet",
+                        "Protocolo de transferência de dados",
+                        "Tipo de roteador",
+                        "Ferramenta de edição de vídeo"
+                    ],
+                    "correta": 0
+                },
+                {
+                    "pergunta": "Qual dispositivo é necessário para conectar um computador à internet?",
+                    "opcoes": [
+                        "Monitor",
+                        "Roteador",
+                        "Impressora",
+                        "Teclado"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que significa a sigla LAN?",
+                    "opcoes": [
+                        "Local Area Network",
+                        "Long Access Node",
+                        "Large Area Network",
+                        "Light Access Network"
+                    ],
+                    "correta": 0
+                }
+            ]
+        },
+        {
+            "fase": 3,
+            "perguntas": [
+                {
+                    "pergunta": "O que é criptografia?",
+                    "opcoes": [
+                        "Um processo de alterar arquivos para economizar espaço de armazenamento.",
+                        "O processo de proteger dados transformando-os em um formato ilegível para terceiros.",
+                        "Um tipo de firewall usado para impedir acessos não autorizados.",
+                        "Um método para monitorar atividades de rede."
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual é a principal função de um firewall?",
+                    "opcoes": [
+                        "Impedir a execução de aplicativos maliciosos.",
+                        "Proteger a rede controlando o tráfego de entrada e saída com base em regras predefinidas.",
+                        "Bloquear a instalação de softwares sem licença.",
+                        "Realizar a criptografia de dados em trânsito na rede."
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que é autenticação de dois fatores (2FA)?",
+                    "opcoes": [
+                        "Um método de verificar a identidade do usuário usando apenas um nome de usuário e senha.",
+                        "Um procedimento que utiliza dois métodos de verificação, como senha e um código enviado ao celular.",
+                        "Um protocolo que impede o acesso a redes sem fio não protegidas.",
+                        "Uma técnica de criptografia assimétrica usada para assinar documentos digitais."
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual é a diferença entre criptografia simétrica e assimétrica?",
+                    "opcoes": [
+                        "A criptografia simétrica utiliza duas chaves e a assimétrica utiliza uma chave única.",
+                        "Na criptografia simétrica, a mesma chave é usada para criptografar e descriptografar; na assimétrica, são usadas duas chaves diferentes.",
+                        "A criptografia simétrica é mais lenta, enquanto a assimétrica é mais rápida.",
+                        "A criptografia simétrica é usada apenas para comunicações internas de rede."
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual das alternativas abaixo é considerada uma boa prática de segurança da informação?",
+                    "opcoes": [
+                        "Utilizar a mesma senha em todos os serviços online para facilitar a memorização.",
+                        "Desativar atualizações automáticas de software para evitar interrupções.",
+                        "Fazer backups regulares e mantê-los em um local seguro.",
+                        "Compartilhar senhas apenas com colegas de confiança."
+                    ],
+                    "correta": 2
+                },
+                {
+                    "pergunta": "O que é um certificado digital?",
+                    "opcoes": [
+                        "Um documento que comprova a autenticidade de arquivos no sistema.",
+                        "Uma chave de criptografia que valida a identidade de uma entidade na internet.",
+                        "Uma senha gerada automaticamente para proteger contas de e-mail.",
+                        "Um documento eletrônico para armazenar informações confidenciais."
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual o principal objetivo da criptografia em um sistema de comunicação?",
+                    "opcoes": [
+                        "Melhorar a velocidade de transmissão de dados.",
+                        "Garantir que somente os destinatários autorizados possam acessar o conteúdo da mensagem.",
+                        "Bloquear completamente o acesso à rede para usuários não autenticados.",
+                        "Facilitar o rastreamento de dados através da rede."
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que é um ataque de força bruta?",
+                    "opcoes": [
+                        "Uma técnica que usa várias senhas fracas para acessar um sistema protegido.",
+                        "Um ataque onde se tenta todas as combinações possíveis de senhas até descobrir a correta.",
+                        "Um método de infectar computadores por meio de e-mails maliciosos.",
+                        "Um ataque que tenta interceptar dados criptografados em uma rede segura."
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual é a função de uma VPN (Virtual Private Network)?",
+                    "opcoes": [
+                        "Realizar a criptografia de arquivos armazenados localmente.",
+                        "Conectar usuários à internet de forma anônima e segura, criptografando o tráfego de dados.",
+                        "Bloquear o acesso a sites maliciosos e prejudiciais.",
+                        "Facilitar o compartilhamento de arquivos entre usuários sem autenticação."
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que significa o termo 'phishing' em segurança da informação?",
+                    "opcoes": [
+                        "O ato de interceptar e modificar pacotes de dados em uma rede.",
+                        "Um tipo de ataque onde o invasor tenta obter informações sensíveis fingindo ser uma entidade confiável.",
+                        "Um software utilizado para criptografar dados pessoais.",
+                        "Uma prática de testar a segurança de senhas usando softwares automatizados."
+                    ],
+                    "correta": 1
+                }
+            ]
+        },
+        {
+            "fase": 4,
+            "perguntas": [
+                {
+                    "pergunta": "Qual é a função principal de um algoritmo?",
+                    "opcoes": [
+                        "Tornar o código mais legível",
+                        "Resolver um problema de forma estruturada",
+                        "Otimizar o hardware do computador",
+                        "Melhorar o design gráfico de uma interface"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que é uma variável em programação?",
+                    "opcoes": [
+                        "Uma função que sempre retorna o mesmo valor",
+                        "Um espaço de armazenamento para dados mutáveis",
+                        "Um código usado para corrigir erros",
+                        "Um método fixo dentro de uma classe"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que é um loop (laço) em programação?",
+                    "opcoes": [
+                        "Um comando que se repete até uma condição ser satisfeita",
+                        "Uma função usada para entrada de dados",
+                        "Um erro de compilação",
+                        "Um tipo de estrutura condicional"
+                    ],
+                    "correta": 0
+                },
+                {
+                    "pergunta": "Qual das seguintes linguagens de programação é orientada a objetos?",
+                    "opcoes": [
+                        "HTML",
+                        "Python",
+                        "CSS",
+                        "SQL"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que é uma função recursiva?",
+                    "opcoes": [
+                        "Uma função que chama a si mesma",
+                        "Uma função que retorna múltiplos valores",
+                        "Uma função que só pode ser chamada uma vez",
+                        "Uma função que nunca retorna valor"
+                    ],
+                    "correta": 0
+                },
+                {
+                    "pergunta": "Qual é o propósito da estrutura condicional IF?",
+                    "opcoes": [
+                        "Repetir um bloco de código",
+                        "Executar código com base em uma condição",
+                        "Substituir uma variável",
+                        "Definir valores constantes"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual dos seguintes é um exemplo de estrutura de dados?",
+                    "opcoes": [
+                        "while",
+                        "if-else",
+                        "Array",
+                        "print()"
+                    ],
+                    "correta": 2
+                },
+                {
+                    "pergunta": "O que significa a sigla IDE em programação?",
+                    "opcoes": [
+                        "Interactive Development Engine",
+                        "Integrated Development Environment",
+                        "Internal Data Encryption",
+                        "Initial Data Entry"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Em qual das seguintes estruturas de dados os elementos são acessados em ordem LIFO (Last In, First Out)?",
+                    "opcoes": [
+                        "Fila (Queue)",
+                        "Pilha (Stack)",
+                        "Árvore binária (Binary Tree)",
+                        "Grafo (Graph)"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "O que é a depuração (debugging) de um programa?",
+                    "opcoes": [
+                        "O processo de compilar o código",
+                        "A remoção de erros e falhas no código",
+                        "A criação de novas funções",
+                        "A documentação do código"
+                    ],
+                    "correta": 1
+                }
+            ]
+        },
+        {
+            "fase": 5,
+            "perguntas": [
+                {
+                    "pergunta": "O que é um Sistema Gerenciador de Banco de Dados (SGBD)?",
+                    "opcoes": [
+                        "Um software que auxilia no controle de memória RAM",
+                        "Um software que permite criar, gerenciar e manipular bancos de dados",
+                        "Um conjunto de dados armazenados em um computador sem conexão entre si",
+                        "Um algoritmo para otimização de consultas SQL"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual comando SQL é utilizado para adicionar uma nova linha em uma tabela?",
+                    "opcoes": [
+                        "INSERT INTO",
+                        "SELECT INTO",
+                        "UPDATE",
+                        "DELETE"
+                    ],
+                    "correta": 0
+                },
+                {
+                    "pergunta": "O que é a normalização em bancos de dados?",
+                    "opcoes": [
+                        "O processo de aumentar a redundância de dados para melhorar a performance",
+                        "O processo de dividir um banco de dados em várias tabelas relacionadas para reduzir redundância",
+                        "A criação de índices para acelerar consultas",
+                        "O uso de triggers para automatizar tarefas"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual é a principal função da chave primária (Primary Key) em uma tabela?",
+                    "opcoes": [
+                        "Garantir a integridade referencial",
+                        "Permitir a repetição de valores na coluna",
+                        "Identificar de forma única cada registro na tabela",
+                        "Definir a ordem dos registros na tabela"
+                    ],
+                    "correta": 2
+                },
+                {
+                    "pergunta": "O que é um índice (index) em um banco de dados relacional?",
+                    "opcoes": [
+                        "Uma forma de organizar os dados em formato JSON",
+                        "Uma tabela temporária usada para armazenar consultas complexas",
+                        "Uma estrutura que melhora a velocidade de recuperação de dados",
+                        "Um comando utilizado para alterar a estrutura de uma tabela"
+                    ],
+                    "correta": 2
+                },
+                {
+                    "pergunta": "Em qual das formas normais uma tabela deve estar para eliminar totalmente a duplicidade de dados e garantir dependência funcional completa?",
+                    "opcoes": [
+                        "Primeira Forma Normal (1NF)",
+                        "Segunda Forma Normal (2NF)",
+                        "Terceira Forma Normal (3NF)",
+                        "Forma Normal Boyce-Codd (BCNF)"
+                    ],
+                    "correta": 2
+                },
+                {
+                    "pergunta": "O que é SQL (Structured Query Language)?",
+                    "opcoes": [
+                        "Uma linguagem de programação orientada a objetos",
+                        "Uma linguagem utilizada para criar e manipular bancos de dados relacionais",
+                        "Um protocolo de comunicação entre servidores de banco de dados",
+                        "Um formato de arquivo usado para armazenar dados em sistemas distribuídos"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual é a função do comando JOIN no SQL?",
+                    "opcoes": [
+                        "Combinar colunas de diferentes bancos de dados",
+                        "Unir tabelas distintas com base em uma coluna em comum",
+                        "Atualizar múltiplos registros simultaneamente",
+                        "Eliminar linhas duplicadas de uma tabela"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Em qual sistema de arquivos o Windows geralmente formata discos rígidos?",
+                    "opcoes": [
+                        "FAT32",
+                        "NTFS",
+                        "ext4",
+                        "HFS+"
+                    ],
+                    "correta": 1
+                },
+                {
+                    "pergunta": "Qual é a principal função do comando TRUNCATE no SQL?",
+                    "opcoes": [
+                        "Remover todas as linhas de uma tabela sem registrar a operação",
+                        "Excluir completamente uma tabela e seu esquema",
+                        "Atualizar os valores de uma coluna para um valor padrão",
+                        "Criar uma nova tabela temporária"
+                    ],
+                    "correta": 0
+                }
+            ]
+        }
+        
+    ]
+}
