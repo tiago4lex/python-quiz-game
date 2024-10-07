@@ -143,6 +143,9 @@ def iniciar_jogo():
                         else:
                             respostas_consecutivas_corretas = 0
                         pergunta_atual += 1
+                        
+                        #reinicia cronometro
+                        tempo_restante = tempo_limite
                         break
 
         pygame.display.flip()
