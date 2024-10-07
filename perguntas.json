@@ -91,10 +91,10 @@
         {
           "pergunta": "O que significa a sigla 'CPU'?",
           "opcoes": [
-            "Central Processing Unit",
-            "Central Processamento de Unidade",
-            "Central Processamento de Unidade",
-            "Central Processamento de Unidade"
+            "Central de Processamento de Unidade",
+            "Central de Pixels de Unidade",
+            "Central de Pagamento de Unidade",
+            "Central de Pensamento de Unidade"
           ],
           "correta": 0
         }
