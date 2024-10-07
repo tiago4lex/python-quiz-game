@@ -40,7 +40,7 @@ def carregar_perguntas(caminho):
 
 # Carregar perguntas
 try:
-    perguntas_dados = carregar_perguntas('QUIZ GAME/perguntas.json')
+    perguntas_dados = carregar_perguntas('perguntas.json')
 except FileNotFoundError:
     print("Arquivo perguntas.json não encontrado!")
     sys.exit()
