@@ -65,10 +65,16 @@ def criar_botao(texto, fonte, cor_texto, cor_fundo, x, y, largura, altura):
     tela.blit(tela_texto, texto_rect)
     return pygame.Rect(x, y, largura, altura)
 
+
 def mostrar_tempo_esgotado():
+    global fase_atual, pontuacao, respostas_consecutivas_corretas
     tela.fill(BRANCO)
     desenhar_texto("Tempo esgotado!", fonte_titulo, VERMELHO, largura // 2 - 150, altura // 2 - 50)
-    desenhar_texto("Pressione Enter para voltar ao menu.", fonte_botao, PRETO, largura // 2 - 250, altura // 2 + 50)
+    
+    # Botão de reinício
+    botao_reiniciar = criar_botao("Reiniciar", fonte_botao, BRANCO, VERMELHO, largura // 2 - 100, altura // 2 + 50, 200, 50)
+    desenhar_texto("Pressione Enter para voltar ao menu.", fonte_botao, PRETO, largura // 2 - 250, altura // 2 + 120)
+    
     pygame.display.flip()
 
     esperando = True
@@ -80,6 +86,17 @@ def mostrar_tempo_esgotado():
             elif evento.type == pygame.KEYDOWN:
                 if evento.key == pygame.K_RETURN:
                     esperando = False
+            elif evento.type == pygame.MOUSEBUTTONDOWN:
+                if botao_reiniciar.collidepoint(evento.pos):
+                    reiniciar_jogo()
+                    esperando = False
+
+def reiniciar_jogo():
+    global fase_atual, pontuacao, respostas_consecutivas_corretas
+    fase_atual = 1
+    pontuacao = 0
+    respostas_consecutivas_corretas = 0
+    iniciar_jogo()
 
 def iniciar_jogo():
     global fase_atual, pontuacao, respostas_consecutivas_corretas
@@ -116,12 +133,12 @@ def iniciar_jogo():
             pergunta_atual = 0
 
         pergunta = perguntas_da_fase[pergunta_atual]
-        desenhar_texto(f"Fase {fase_atual} - Pergunta {pergunta_atual + 1}", fonte_pergunta, PRETO, 50, 50)
-        desenhar_texto(pergunta["pergunta"], fonte_pergunta, PRETO, 50, 100)
+        desenhar_texto(f"Fase {fase_atual} - Pergunta {pergunta_atual + 1}", fonte_pergunta, PRETO, 250, 50)
+        desenhar_texto(pergunta["pergunta"], fonte_pergunta, PRETO, 250, 200)
 
         botoes_opcoes = []
         for i, opcao in enumerate(pergunta["opcoes"]):
-            botao = criar_botao(opcao, fonte_opcao, BRANCO, AZUL, 50, 200 + (i * 60), 400, 50)
+            botao = criar_botao(opcao, fonte_opcao, BRANCO, AZUL, 250, 300 + (i * 60), 800, 50)
             botoes_opcoes.append(botao)
 
         if tempo_restante <= 0:
