@@ -3,7 +3,7 @@ import sys
 import time
 import json
 import random
-import os
+import os  # Importação necessária para manipulação de caminhos
 
 pygame.init()
 
@@ -25,15 +25,19 @@ fonte_botao = pygame.font.SysFont('Arial', 30)
 fonte_pergunta = pygame.font.SysFont('Arial', 30)
 fonte_opcao = pygame.font.SysFont('Arial', 25)
 fonte_pontuacao = pygame.font.SysFont('Arial', 25)
-fonte_nome = pygame.font.SysFont('Arial', 30)
+fonte_nome = pygame.font.SysFont('Arial', 30)  # Fonte para captura de nome
 
 # Configurações de tempo e pontuação
 tempo_limite = 30  
 pontuacao = 0
 respostas_consecutivas_corretas = 0
 fase_atual = 1
-perguntas_por_fase = 10
 relogio = pygame.time.Clock()
+
+# Obter o diretório onde o script está localizado
+script_dir = os.path.dirname(os.path.abspath(__file__))
+caminho_perguntas = os.path.join(script_dir, 'perguntas.json')
+caminho_estatisticas = os.path.join(script_dir, 'estatisticas.json')
 
 # Função para carregar perguntas de um arquivo JSON
 def carregar_perguntas(caminho):
@@ -42,9 +46,9 @@ def carregar_perguntas(caminho):
 
 # Carregar perguntas
 try:
-    perguntas_dados = carregar_perguntas('perguntas.json')
+    perguntas_dados = carregar_perguntas(caminho_perguntas)
 except FileNotFoundError:
-    print("Arquivo perguntas.json não encontrado!")
+    print(f"Arquivo {caminho_perguntas} não encontrado!")
     sys.exit()
 except UnicodeDecodeError:
     print("Erro de decodificação de caracteres no arquivo!")
@@ -60,16 +64,17 @@ def desenhar_pontuacao_e_tempo(pontuacao, tempo_restante):
     desenhar_texto(f"Pontuação: {pontuacao}", fonte_pontuacao, PRETO, 20, 20)
     desenhar_texto(f"Tempo: {tempo_restante:.1f}s", fonte_pontuacao, PRETO, largura - 200, 20)
 
-def criar_botao(texto, fonte, cor_texto, cor_fundo, x, y, largura, altura):
-    pygame.draw.rect(tela, cor_fundo, (x, y, largura, altura))
+def criar_botao(texto, fonte, cor_texto, cor_fundo, x, y, largura_botao, altura_botao):
+    pygame.draw.rect(tela, cor_fundo, (x, y, largura_botao, altura_botao))
     tela_texto = fonte.render(texto, True, cor_texto)
-    texto_rect = tela_texto.get_rect(center=(x + largura // 2, y + altura // 2))
+    texto_rect = tela_texto.get_rect(center=(x + largura_botao // 2, y + altura_botao // 2))
     tela.blit(tela_texto, texto_rect)
-    return pygame.Rect(x, y, largura, altura)
+    return pygame.Rect(x, y, largura_botao, altura_botao)
 
-
-def mostrar_tempo_esgotado():
-    global fase_atual, pontuacao, respostas_consecutivas_corretas
+def mostrar_tempo_esgotado(nome_jogador, pontuacao):
+    # Salvar estatísticas antes de mostrar a tela de tempo esgotado
+    salvar_estatisticas(nome_jogador, pontuacao)
+    
     tela.fill(BRANCO)
     desenhar_texto("Tempo esgotado!", fonte_titulo, VERMELHO, largura // 2 - 150, altura // 2 - 50)
     
@@ -99,7 +104,7 @@ def reiniciar_jogo():
     pontuacao = 0
     respostas_consecutivas_corretas = 0
     iniciar_jogo()
-    
+
 def capturar_nome_jogador():
     nome = ""
     ativo = True
@@ -140,7 +145,7 @@ def iniciar_jogo():
     random.shuffle(perguntas_da_fase)
     tempo_restante = tempo_limite
     
-     # Solicitar o nome do jogador através da interface gráfica
+    # Solicitar o nome do jogador através da interface gráfica
     nome_jogador = capturar_nome_jogador()
 
     while rodando:
@@ -177,7 +182,7 @@ def iniciar_jogo():
             botoes_opcoes.append(botao)
 
         if tempo_restante <= 0:
-            mostrar_tempo_esgotado()
+            mostrar_tempo_esgotado(nome_jogador, pontuacao)  # Passar parâmetros
             return  
 
         for evento in pygame.event.get():
@@ -192,11 +197,13 @@ def iniciar_jogo():
                         if i == pergunta["correta"]:
                             pontuacao += 10
                             respostas_consecutivas_corretas += 1
+                            if respostas_consecutivas_corretas == 5:
+                                pontuacao += 50  # Bônus por 5 respostas consecutivas
                         else:
                             respostas_consecutivas_corretas = 0
                         pergunta_atual += 1
                         
-                        #reinicia cronometro
+                        # Reinicia o cronômetro
                         tempo_restante = tempo_limite
                         break
 
@@ -216,7 +223,7 @@ def salvar_estatisticas(nome_jogador, pontuacao):
     
     with open(caminho_estatisticas, "w", encoding="utf-8") as arquivo:
         json.dump(dados, arquivo, indent=4)
-        
+
 def mostrar_estatisticas():
     tela.fill(BRANCO)
     desenhar_texto("Estatísticas de Pontuação", fonte_titulo, AZUL, largura // 2 - 200, altura // 2 - 200)
@@ -244,6 +251,25 @@ def mostrar_estatisticas():
                 if evento.key == pygame.K_RETURN:
                     esperando = False
 
+def mostrar_sobre():
+    tela.fill(BRANCO)
+    desenhar_texto("Sobre o Jogo", fonte_titulo, AZUL, largura // 2 - 200, altura // 2 - 200)
+    desenhar_texto("Este é um jogo de quiz desenvolvido em Python usando Pygame.", fonte_botao, PRETO, largura // 2 - 300, altura // 2 - 100)
+    desenhar_texto("Desafie seus conhecimentos e veja suas pontuações comparadas com outros jogadores!", fonte_botao, PRETO, largura // 2 - 350, altura // 2 - 50)
+    desenhar_texto("Pressione Enter para voltar ao menu.", fonte_botao, PRETO, largura // 2 - 250, altura // 2 + 50)
+    pygame.display.flip()
+
+    esperando = True
+    while esperando:
+        for evento in pygame.event.get():
+            if evento.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+            elif evento.type == pygame.KEYDOWN:
+                if evento.key == pygame.K_RETURN:
+                    esperando = False
+
+# Função do menu inicial para melhor organização
 def menu_inicial():
     rodando = True
     while rodando:
@@ -273,44 +299,3 @@ def menu_inicial():
 # Iniciar o menu inicial
 if __name__ == "__main__":
     menu_inicial()
-def mostrar_sobre():
-    tela.fill(BRANCO)
-    desenhar_texto("Sobre o Jogo", fonte_titulo, AZUL, largura // 2 - 200, altura // 2 - 200)
-    desenhar_texto("Este é um jogo de quiz!", fonte_botao, PRETO, largura // 2 - 100, altura // 2 - 100)
-    desenhar_texto("Desafie seus conhecimentos!", fonte_botao, PRETO, largura // 2 - 100, altura // 2 - 50)
-    desenhar_texto("Pressione Enter para voltar ao menu.", fonte_botao, PRETO, largura // 2 - 250, altura // 2 + 50)
-    pygame.display.flip()
-
-    esperando = True
-    while esperando:
-        for evento in pygame.event.get():
-            if evento.type == pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-            elif evento.type == pygame.KEYDOWN:
-                if evento.key == pygame.K_RETURN:
-                    esperando = False
-
-# Loop principal
-while True:
-    tela.fill(BRANCO)
-    desenhar_texto("Quiz Game", fonte_titulo, AZUL, largura // 2 - 150, altura // 2 - 200)
-
-    # Criar botões do menu
-    botao_jogar = criar_botao("Jogar", fonte_botao, BRANCO, VERDE, largura // 2 - 100, altura // 2 - 50, 200, 50)
-    botao_estatisticas = criar_botao("Estatísticas", fonte_botao, BRANCO, AMARELO, largura // 2 - 100, altura // 2 + 10, 200, 50)
-    botao_sobre = criar_botao("Sobre", fonte_botao, BRANCO, VERMELHO, largura // 2 - 100, altura // 2 + 70, 200, 50)
-
-    for evento in pygame.event.get():
-        if evento.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-        if evento.type == pygame.MOUSEBUTTONDOWN:
-            if botao_jogar.collidepoint(evento.pos):
-                iniciar_jogo()
-            elif botao_estatisticas.collidepoint(evento.pos):
-                mostrar_estatisticas()
-            elif botao_sobre.collidepoint(evento.pos):
-                mostrar_sobre()
-
-    pygame.display.flip()

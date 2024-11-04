@@ -1,3 +1,16 @@
 {
-    "jogadores": []
+    "jogadores": [
+        {
+            "nome": "Tiago",
+            "pontuacao": 999
+        },
+        {
+            "nome": "Jhon",
+            "pontuacao": 380
+        },
+        {
+            "nome": "fdfae",
+            "pontuacao": 30
+        }
+    ]
 }
